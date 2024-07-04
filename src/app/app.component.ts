@@ -14,10 +14,10 @@ import {TodoListComponent} from "./components/todo-list/todo-list.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'todo-list-angular';
+  title = 'Todo list';
   todoList: Array<TodoItem> = [];
 
   onAddTodo(item: TodoItem) {
-    this.todoList.push(item);
+    this.todoList = [...this.todoList, item];
   }
 }

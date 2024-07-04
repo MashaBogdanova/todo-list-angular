@@ -1,7 +1,18 @@
-<ul class="todo-list">
-  <app-todo-item
-    *ngFor="let item of todoList"
-    [item]="item"
-    (toggleCompleted)="onToggleCompleted(item)"
-  ></app-todo-item>
-</ul>
+<div class="todo-lists-wrapper">
+  <ul class="todo-list">
+    <h2>Upcoming tasks</h2>
+    <app-todo-item
+      *ngFor="let item of upcomingTodos"
+      [item]="item"
+      (toggleCompleted)="onToggleCompleted(item)"
+    ></app-todo-item>
+  </ul>
+  <ul class="todo-list">
+    <h2>Completed tasks</h2>
+    <app-todo-item
+      *ngFor="let item of completedTodos"
+      [item]="item"
+      (toggleCompleted)="onToggleCompleted(item)"
+    ></app-todo-item>
+  </ul>
+</div>

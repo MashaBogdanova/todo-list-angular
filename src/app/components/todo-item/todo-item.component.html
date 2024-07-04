@@ -1,4 +1,4 @@
-<li class="todo">
-  <input type="checkbox" (change)="onToggleCompleted()"/>
+<li class="todo" [ngClass]="{completed: item.isCompleted}">
+  <input type="checkbox" [checked]="item.isCompleted" (change)="onToggleCompleted()"/>
   <h2>{{ item.title }}</h2>
 </li>
