@@ -1,11 +1,14 @@
 <div class="todo-lists-wrapper">
   <ul class="todo-list">
     <h2>Upcoming tasks</h2>
+    <p *ngIf="todoList.length === 0; else appTodoItem">Add your first task!</p>
+    <ng-template #appTodoItem>
     <app-todo-item
       *ngFor="let item of upcomingTodos"
       [item]="item"
       (toggleCompleted)="onToggleCompleted(item)"
     ></app-todo-item>
+    </ng-template>
   </ul>
   <ul class="todo-list">
     <h2>Completed tasks</h2>

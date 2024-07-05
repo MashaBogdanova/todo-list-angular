@@ -1,14 +1,25 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {
+  Component,
+  Directive,
+  ElementRef,
+  EventEmitter,
+  HostBinding,
+  HostListener,
+  Input,
+  Output,
+  Renderer2
+} from '@angular/core';
 import {TodoItem} from "../../models/todo.model";
 import {FormsModule} from "@angular/forms";
-import {NgClass} from "@angular/common";
+import {NgClass, NgStyle} from "@angular/common";
 
 @Component({
   selector: 'app-todo-item',
   standalone: true,
   imports: [
     FormsModule,
-    NgClass
+    NgClass,
+    NgStyle
   ],
   templateUrl: './todo-item.component.html',
   styleUrl: './todo-item.component.css'

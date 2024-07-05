@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, OnInit} from '@angular/core';
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 import {TodoItem} from "../../models/todo.model";
 import {TodoItemComponent} from "../todo-item/todo-item.component";
 
@@ -8,7 +8,8 @@ import {TodoItemComponent} from "../todo-item/todo-item.component";
   standalone: true,
   imports: [
     NgForOf,
-    TodoItemComponent
+    TodoItemComponent,
+    NgIf
   ],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.css'
@@ -39,3 +40,4 @@ export class TodoListComponent implements OnChanges, OnInit{
     this.completedTodos = this.todoList.filter((item) => item.isCompleted);
   }
 }
+
